@@ -52,7 +52,7 @@
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="esLongTextInput">Texto</label>
-                            <textarea name="es_long_text" class="form-control {{ $errors->get('es_long_text') ? 'is-invalid' : '' }}" id="esLongTextInput" rows="5">{{ old('es_long_text', optional($news)->es_long_text) }}</textarea>
+                            <textarea name="es_long_text" class="form-control {{ $errors->get('es_long_text') ? 'is-invalid' : '' }} ckeditor" id="esLongTextInput" rows="5">{{ old('es_long_text', optional($news)->es_long_text) }}</textarea>
                             @error('es_long_text')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -95,7 +95,7 @@
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="enLongTextInput">Texto</label>
-                            <textarea name="en_long_text" class="form-control {{ $errors->get('en_long_text') ? 'is-invalid' : '' }}" id="enLongTextInput" rows="5">{{ old('en_long_text', optional($news)->en_long_text) }}</textarea>
+                            <textarea name="en_long_text" class="form-control {{ $errors->get('en_long_text') ? 'is-invalid' : '' }} ckeditor" id="enLongTextInput" rows="5">{{ old('en_long_text', optional($news)->en_long_text) }}</textarea>
                             @error('en_long_text')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -190,4 +190,6 @@
 			</div><!--modal-content-->
 		</div><!--modal-dialog-->
 	</div><!--modal-->
+
+    <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
 @stop

@@ -39,7 +39,7 @@
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="esDescriptionInput">Descripción</label>
-                            <textarea name="es_description" class="form-control {{ $errors->get('es_description') ? 'is-invalid' : '' }}" id="esDescriptionInput">{{ old('es_description', optional($discount)->es_description) }}</textarea>
+                            <textarea name="es_description" class="form-control {{ $errors->get('es_description') ? 'is-invalid' : '' }} ckeditor" id="esDescriptionInput">{{ old('es_description', optional($discount)->es_description) }}</textarea>
                             <small class="text-muted">
                                 Aparecerá en el detalle del descuento
                             </small>
@@ -72,7 +72,7 @@
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="enDescriptionInput">Descripción</label>
-                            <textarea name="en_description" class="form-control {{ $errors->get('en_description') ? 'is-invalid' : '' }}" id="enDescriptionInput">{{ old('en_description', optional($discount)->en_description) }}</textarea>
+                            <textarea name="en_description" class="form-control {{ $errors->get('en_description') ? 'is-invalid' : '' }} ckeditor" id="enDescriptionInput">{{ old('en_description', optional($discount)->en_description) }}</textarea>
                             <small class="text-muted">
                                 Aparecerá en el detalle del descuento
                             </small>
@@ -207,4 +207,6 @@
 			</div><!--modal-content-->
 		</div><!--modal-dialog-->
 	</div><!--modal-->
+
+    <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
 @stop

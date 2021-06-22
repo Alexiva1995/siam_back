@@ -52,14 +52,14 @@
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="esLongTextInput">Texto Largo</label>
-                            <textarea name="es_long_text" class="form-control {{ $errors->get('es_long_text') ? 'is-invalid' : '' }}" id="esLongTextInput" rows="5">{{ old('es_long_text', optional($event)->es_long_text) }}</textarea>
+                            <textarea name="es_long_text" class="form-control {{ $errors->get('es_long_text') ? 'is-invalid' : '' }} ckeditor" id="esLongTextInput" rows="5">{{ old('es_long_text', optional($event)->es_long_text) }}</textarea>
                             @error('es_long_text')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="esShortTextInput">Texto corto</label>
-                            <textarea name="es_short_text" class="form-control {{ $errors->get('es_short_text') ? 'is-invalid' : '' }}" id="esShortTextInput" rows="5">{{ old('es_short_text', optional($event)->es_short_text) }}</textarea>
+                            <textarea name="es_short_text" class="form-control {{ $errors->get('es_short_text') ? 'is-invalid' : '' }} ckeditor" id="esShortTextInput" rows="5">{{ old('es_short_text', optional($event)->es_short_text) }}</textarea>
                             @error('es_short_text')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -102,14 +102,14 @@
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="enLongTextInput">Texto Largo</label>
-                            <textarea name="en_long_text" class="form-control {{ $errors->get('en_long_text') ? 'is-invalid' : '' }}" id="enLongTextInput" rows="5">{{ old('en_long_text', optional($event)->en_long_text) }}</textarea>
+                            <textarea name="en_long_text" class="form-control {{ $errors->get('en_long_text') ? 'is-invalid' : '' }} ckeditor" id="enLongTextInput" rows="5">{{ old('en_long_text', optional($event)->en_long_text) }}</textarea>
                             @error('en_long_text')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div><!--form-group-->
                         <div class="form-group">
                             <label for="enShortTextInput">Texto corto</label>
-                            <textarea name="en_short_text" class="form-control {{ $errors->get('en_short_text') ? 'is-invalid' : '' }}" id="enShortTextInput" rows="5">{{ old('en_short_text', optional($event)->en_short_text) }}</textarea>
+                            <textarea name="en_short_text" class="form-control {{ $errors->get('en_short_text') ? 'is-invalid' : '' }} ckeditor" id="enShortTextInput" rows="5">{{ old('en_short_text', optional($event)->en_short_text) }}</textarea>
                             @error('en_short_text')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -204,4 +204,6 @@
 			</div><!--modal-content-->
 		</div><!--modal-dialog-->
 	</div><!--modal-->
+
+    <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
 @stop
