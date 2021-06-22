@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+
+  php:
+    build:
+      context: '.'
+    working_dir: /var/www/html
+    privileged: true
+    volumes:
+    - ./bin:/var/www/html
+    - ./_data/storage:/var/www/html/storage/app/public      
+    - ./_files/.env:/var/www/html/.env
+    - ./_files/laravel.conf:/etc/apache2/sites-available/laravel.conf
+    - ./_files/oauth-private.key:/var/www/html/storage/oauth-private.key
+    - ./_files/oauth-public.key:/var/www/html/storage/oauth-public.key
+    ports:
+      - 80:80
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - ./_data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=siamapp123*
+      - MYSQL_DATABASE=siam
+      - MYSQL_USER=siam
+      - MYSQL_PASSWORD=siamapp123*
+    cap_add:
+      - SYS_NICE
+    ports:
+      - 3306:3306
